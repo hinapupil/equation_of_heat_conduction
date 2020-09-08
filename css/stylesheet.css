@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+#panel {
+  background-color: rgb(190, 129, 247);
+  width: fit-content;
+}
+.box {
+  /* width: 80px;
+  height: 60px; */
+  margin: 10px;
+  appearance: none;
+  background: #4676D7;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.box:hover {
+  background: #1d49aa;
+}
+.box:focus {
+  outline: none;
+  box-shadow: 0 0 2px 4px #cbd6ee;
+}
+#formula {
+  background-color: aqua;
+  width: fit-content;
+}
+#main {
+  background-color: tomato;
+  width: 460px;
+}
+#area1 {
+  background-color: lightpink;
+  width: 460px;
+  height: 230px;
+}
+#area2 {
+  background-color: chartreuse;
+  width: 460px;
+  height: 340px;
+}

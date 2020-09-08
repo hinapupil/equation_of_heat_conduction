@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <title>放物型の偏微分方程式のシミュレータ</title>
+</head>
+<body>
+  <div class="container">
+    <div id="panel">
+      <div>
+        <button type="button" class="box box1">start</button>
+      </div>
+    <div>
+      <button type="button" class="box box2">stop</button>
+    </div>
+    <div>
+      <button type="button" class="box box3s">reset</button>
+    </div>
+  </div>
+  
+  <div id="formula">
+    \begin{align*}
+    &u:温度, x:位置, t:時間, \\
+    &k:微小時間, h:微小距離, \\
+    &j:時間方向の変数, i:位置方向の変数 \\
+    \; \\
+    \frac{\partial u}{\partial t}&=\frac{\partial^2}{\partial x^2}\\
+    &\downarrow 差分近似 \\
+    \frac{u_{i,j+1}-u_{i,j}}{k}&=\frac{u_{i+1,j}-2u_{i,j}+u_{i-1,j}}{h^2} \cdot\cdot\cdot\ast \\
+    ここで, u_{i,0}&=T \; \; (i=0,1,...,i_{max}) \\
+    &とし、差分近似式 \ast を変形 \\
+    u_{i,j+1}&=r(u_{i+1,j}+u_{i-1,j})+(1-2r)u_{i,j} \\
+    & ただし, r=\frac{k}{h^2}
+    \end{align*}
+  </div>
+  
+  <div id="main">
+    <div id="area1" class="area">
+      <p>　金属棒の様子</p>
+      <canvas class="myCanvas" id="graph1" width="460" height="230"></canvas>
+    </div>
+    <div id="area2" class="area">
+      <p>　位置-温度グラフの時間変化</p>
+      <canvas class="myCanvas" id="graph2" width="460" height="340"></canvas>
+    </div>
+  </div>
+</div>
+</body>
+</html>
